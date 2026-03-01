@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-left" aria-hidden="true"></div>
+  <div class="bg-shape bg-shape-right" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Ages 3-5 Pattern Practice</p>
+      <h1>Pattern Playground</h1>
+      <p class="subtitle">Tap, listen, and play with repeating patterns.</p>
+      <div class="score" aria-live="polite">
+        Stars earned: <strong id="star-count">0</strong>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Activities">
+      <button class="tab active" data-tab="next-game">What Comes Next?</button>
+      <button class="tab" data-tab="fill-game">Fill the Blanks</button>
+      <button class="tab" data-tab="build-game">Make a Pattern</button>
+      <button class="tab" data-tab="materials">Materials</button>
+    </nav>
+
+    <section id="next-game" class="panel active">
+      <h2>What comes next?</h2>
+      <p id="next-hint">Look at the pattern and pick the next picture.</p>
+      <div class="pattern-strip" id="next-strip" aria-live="polite"></div>
+      <div class="choices" id="next-choices"></div>
+      <div class="row">
+        <button id="speak-next" class="secondary">Read Prompt</button>
+        <button id="next-puzzle" class="secondary">New Puzzle</button>
+      </div>
+      <p id="next-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <section id="fill-game" class="panel">
+      <h2>Fill the blanks</h2>
+      <p id="fill-hint">Tap each blank until it shows the right picture, then check.</p>
+      <div class="pattern-strip" id="fill-strip" aria-live="polite"></div>
+      <div class="row">
+        <button id="check-fill" class="secondary">Check Answers</button>
+        <button id="new-fill" class="secondary">New Fill Puzzle</button>
+      </div>
+      <p id="fill-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <section id="build-game" class="panel">
+      <h2>Make your own pattern</h2>
+      <p class="build-help">Tap pictures to build a pattern. Try to repeat your pattern at least two times.</p>
+      <div id="build-palette" class="choices"></div>
+      <div id="build-output" class="pattern-strip"></div>
+      <div class="row">
+        <button id="check-build" class="secondary">Check Pattern</button>
+        <button id="clear-build" class="secondary">Clear</button>
+      </div>
+      <p id="build-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <section id="materials" class="panel">
+      <h2>Simple Materials for Offline Pattern Play</h2>
+      <ul>
+        <li>Paper strips or index cards, crayons, and stickers for quick AB or AAB cards.</li>
+        <li>Household objects for copy patterns: spoons, toy cars, blocks, socks, or cups.</li>
+        <li>Printable shape cards from PBS for cut-and-place pattern games.</li>
+        <li>Nature finds for outdoor patterns: leaves, rocks, or flowers.</li>
+      </ul>
+      <h3>Parent Tips</h3>
+      <ul>
+        <li>Use short sessions (5-10 minutes), then switch to hands-on materials.</li>
+        <li>Talk out loud together: “red, blue, red, blue...” so she hears the repeat unit.</li>
+        <li>Mix visual patterns with movement patterns like clap-stomp-clap-stomp.</li>
+      </ul>
+      <h3>Online Sources Used</h3>
+      <ul class="sources">
+        <li><a href="https://www.pbssocal.org/education/at-home-learning/how-to-spot-and-make-patterns-with-your-child" target="_blank" rel="noopener noreferrer">PBS SoCal: How to Spot and Make Patterns with Your Child</a></li>
+        <li><a href="https://www.pbs.org/parents/crafts-and-experiments/pattern-play" target="_blank" rel="noopener noreferrer">PBS Parents: Pattern Play</a></li>
+        <li><a href="https://www.pbslearningmedia.org/resource/2f4ccba6-b7f8-4ec6-b0f5-c2f9e95f7f74/activity-make-a-pattern/" target="_blank" rel="noopener noreferrer">PBS LearningMedia: Activity - Make a Pattern (printable)</a></li>
+        <li><a href="https://nrich.maths.org/4988" target="_blank" rel="noopener noreferrer">NRICH Early Years: Pattern Making</a></li>
+        <li><a href="https://publications.aap.org/aapnews/news/32006/Updated-American-Academy-of-Pediatrics-guidance" target="_blank" rel="noopener noreferrer">AAP (Jan 16, 2026): Updated Guidance on Digital Media</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
