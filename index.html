@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,28 +15,51 @@
 
   <main class="app-shell">
     <header class="hero">
-      <p class="eyebrow">Ages 3-5 Pattern Practice</p>
+      <p class="eyebrow">Pattern play for ages 3-5</p>
       <h1>Pattern Playground</h1>
-      <p class="subtitle">Tap, listen, and play with repeating patterns.</p>
+      <p class="subtitle">Tap pictures. Find what repeats.</p>
       <div class="score" aria-live="polite">
-        Stars earned: <strong id="star-count">0</strong>
+        Stars: <strong id="star-count">0</strong>
       </div>
     </header>
 
+    <section class="generator-panel">
+      <h2>New Pattern</h2>
+      <p>Pick one picture set and repeat size, then tap the yellow button.</p>
+      <div class="control-grid">
+        <label class="control">
+          Picture set
+          <select id="category-select">
+            <option value="fruits">Fruits</option>
+            <option value="colors">Colors</option>
+            <option value="shapes">Shapes</option>
+            <option value="animals">Animals</option>
+          </select>
+        </label>
+        <label class="control">
+          Repeat size
+          <select id="cycle-length-select"></select>
+        </label>
+        <button id="generate-pattern" class="secondary">Make New Pattern</button>
+      </div>
+      <div class="pattern-strip" id="generator-strip" aria-live="polite"></div>
+      <p id="generator-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
     <nav class="tabs" aria-label="Activities">
-      <button class="tab active" data-tab="next-game">What Comes Next?</button>
-      <button class="tab" data-tab="fill-game">Fill the Blanks</button>
-      <button class="tab" data-tab="build-game">Make a Pattern</button>
-      <button class="tab" data-tab="materials">Materials</button>
+      <button class="tab active" data-tab="next-game">What Next?</button>
+      <button class="tab" data-tab="fill-game">Fill Blanks</button>
+      <button class="tab" data-tab="build-game">Make Pattern</button>
+      <button class="tab" data-tab="materials">Grown-Ups</button>
     </nav>
 
     <section id="next-game" class="panel active">
       <h2>What comes next?</h2>
-      <p id="next-hint">Look at the pattern and pick the next picture.</p>
+      <p id="next-hint">Look at the pictures. Tap what comes next.</p>
       <div class="pattern-strip" id="next-strip" aria-live="polite"></div>
       <div class="choices" id="next-choices"></div>
       <div class="row">
-        <button id="speak-next" class="secondary">Read Prompt</button>
+        <button id="speak-next" class="secondary">Read It</button>
         <button id="next-puzzle" class="secondary">New Puzzle</button>
       </div>
       <p id="next-feedback" class="feedback" aria-live="polite"></p>
@@ -44,48 +67,51 @@
 
     <section id="fill-game" class="panel">
       <h2>Fill the blanks</h2>
-      <p id="fill-hint">Tap each blank until it shows the right picture, then check.</p>
+      <p id="fill-hint">Tap each blank picture until it fits, then check.</p>
       <div class="pattern-strip" id="fill-strip" aria-live="polite"></div>
       <div class="row">
-        <button id="check-fill" class="secondary">Check Answers</button>
-        <button id="new-fill" class="secondary">New Fill Puzzle</button>
+        <button id="check-fill" class="secondary">Check</button>
+        <button id="new-fill" class="secondary">New Puzzle</button>
       </div>
       <p id="fill-feedback" class="feedback" aria-live="polite"></p>
     </section>
 
     <section id="build-game" class="panel">
       <h2>Make your own pattern</h2>
-      <p class="build-help">Tap pictures to build a pattern. Try to repeat your pattern at least two times.</p>
+      <p class="build-help">Tap pictures to build. Repeat your set two times or more.</p>
+      <p id="build-config" class="build-config"></p>
       <div id="build-palette" class="choices"></div>
       <div id="build-output" class="pattern-strip"></div>
       <div class="row">
-        <button id="check-build" class="secondary">Check Pattern</button>
+        <button id="check-build" class="secondary">Check</button>
         <button id="clear-build" class="secondary">Clear</button>
       </div>
       <p id="build-feedback" class="feedback" aria-live="polite"></p>
     </section>
 
     <section id="materials" class="panel">
-      <h2>Simple Materials for Offline Pattern Play</h2>
+      <h2>Grown-Up Materials</h2>
+      <p>Online resources for extra fruit, color, shape, and animal pattern practice.</p>
+
+      <h3>Pattern Tools</h3>
       <ul>
-        <li>Paper strips or index cards, crayons, and stickers for quick AB or AAB cards.</li>
-        <li>Household objects for copy patterns: spoons, toy cars, blocks, socks, or cups.</li>
-        <li>Printable shape cards from PBS for cut-and-place pattern games.</li>
-        <li>Nature finds for outdoor patterns: leaves, rocks, or flowers.</li>
+        <li><a href="https://www.mathlearningcenter.org/apps/pattern-shapes" target="_blank" rel="noopener noreferrer">Math Learning Center: Pattern Shapes App</a></li>
+        <li><a href="https://toytheater.com/pattern-blocks/" target="_blank" rel="noopener noreferrer">Toy Theater: Pattern Blocks</a></li>
+        <li><a href="https://www.pbssocal.org/education/pbs-socal-family-math/patterns" target="_blank" rel="noopener noreferrer">PBS SoCal Family Math: Make a Pattern</a></li>
       </ul>
-      <h3>Parent Tips</h3>
+
+      <h3>Printable / Worksheet Practice</h3>
       <ul>
-        <li>Use short sessions (5-10 minutes), then switch to hands-on materials.</li>
-        <li>Talk out loud together: “red, blue, red, blue...” so she hears the repeat unit.</li>
-        <li>Mix visual patterns with movement patterns like clap-stomp-clap-stomp.</li>
+        <li><a href="https://www.k5learning.com/free-preschool-kindergarten-worksheets/patterns/objects" target="_blank" rel="noopener noreferrer">K5 Learning: Patterns of Objects</a></li>
+        <li><a href="https://www.k5learning.com/free-preschool-kindergarten-worksheets/patterns/shapes" target="_blank" rel="noopener noreferrer">K5 Learning: Patterns of Shapes</a></li>
+        <li><a href="https://www.k5learning.com/free-preschool-kindergarten-worksheets/colors" target="_blank" rel="noopener noreferrer">K5 Learning: Colors Worksheets</a></li>
+        <li><a href="https://www.education.com/worksheet/article/pattern-practice-complete-pattern-2/" target="_blank" rel="noopener noreferrer">Education.com: Complete the Fruit Pattern</a></li>
+        <li><a href="https://www.education.com/worksheet/article/patterns-animals-prek/" target="_blank" rel="noopener noreferrer">Education.com: Animal Pattern Practice</a></li>
       </ul>
-      <h3>Online Sources Used</h3>
-      <ul class="sources">
-        <li><a href="https://www.pbssocal.org/education/at-home-learning/how-to-spot-and-make-patterns-with-your-child" target="_blank" rel="noopener noreferrer">PBS SoCal: How to Spot and Make Patterns with Your Child</a></li>
-        <li><a href="https://www.pbs.org/parents/crafts-and-experiments/pattern-play" target="_blank" rel="noopener noreferrer">PBS Parents: Pattern Play</a></li>
-        <li><a href="https://www.pbslearningmedia.org/resource/2f4ccba6-b7f8-4ec6-b0f5-c2f9e95f7f74/activity-make-a-pattern/" target="_blank" rel="noopener noreferrer">PBS LearningMedia: Activity - Make a Pattern (printable)</a></li>
-        <li><a href="https://nrich.maths.org/4988" target="_blank" rel="noopener noreferrer">NRICH Early Years: Pattern Making</a></li>
-        <li><a href="https://publications.aap.org/aapnews/news/32006/Updated-American-Academy-of-Pediatrics-guidance" target="_blank" rel="noopener noreferrer">AAP (Jan 16, 2026): Updated Guidance on Digital Media</a></li>
+
+      <h3>Hands-On Extension</h3>
+      <ul>
+        <li><a href="https://www.prekinders.com/pattern-block-safari/" target="_blank" rel="noopener noreferrer">PreKinders: Pattern Block Safari</a></li>
       </ul>
     </section>
   </main>
@@ -93,3 +119,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+

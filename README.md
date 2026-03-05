@@ -1,33 +1,54 @@
-# Pattern Playground
+﻿# Pattern Playground
 
-Interactive pattern-learning app for a 3.5-year-old with three activities:
+Pattern Playground is a browser-based pattern-learning app for ages 3-5.
 
-- What Comes Next? (choose the next item in AB/AAB/ABB/ABC-style patterns)
-- Fill the Blanks (complete missing items in repeating patterns)
-- Make a Pattern (build and check your own repeating sequence)
+## March 5, 2026 Update Summary
 
-## Run locally
+- Replaced text-based tokens (`AP`, `DOG`, `CIR`, etc.) with visual tokens.
+- Fruits and animals now render as cartoon-style emoji figures.
+- Shapes now render as filled geometric icons (circle, square, triangle, diamond, star, hexagon, oval, rectangle).
+- Colors now render as pure color dots (no color words shown on tokens).
+- Simplified activity language and controls for 3-year-old usability.
+- Increased touch target sizes and improved focus/high-contrast states.
+- Refreshed the in-app materials panel with online resources for parent/teacher extension.
 
-Open `index.html` in a browser, or run a local static server:
+## What It Does
+
+- Offers 4 non-mixed picture families: `fruits`, `colors`, `shapes`, `animals`
+- Lets learners choose repeat size (2-6)
+- Generates random repeating cycles
+- Includes three activities:
+  - **What Next?**
+  - **Fill Blanks**
+  - **Make Pattern**
+- Tracks stars earned
+- Supports speech playback of prompt text
+
+## Start The App
 
 ```powershell
 cd C:\Users\guwei\pattern-learning-app
 python -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Open `http://localhost:8000` in a browser.
 
-## Materials gathered from online sources
+## Project Files
 
-- Paper cards, crayons, and stickers for creating physical pattern strips
-- Household objects (spoons, cups, toy cars, blocks) for object patterns
-- Printable cards from PBS for cut-and-place pattern games
-- Nature items (rocks, leaves, flowers) for outdoor pattern building
+- `index.html` - UI structure and activity panels
+- `styles.css` - toddler-first visual styling and responsive layout
+- `app.js` - pattern generation, puzzle flow, scoring, and token rendering
+- `FUTURE_ITERATIONS.md` - current status and next roadmap
 
-## Sources used
+## Online Materials Used (Reviewed March 5, 2026)
 
-- PBS SoCal: https://www.pbssocal.org/education/at-home-learning/how-to-spot-and-make-patterns-with-your-child
-- PBS Parents (Pattern Play): https://www.pbs.org/parents/crafts-and-experiments/pattern-play
-- PBS LearningMedia printable: https://www.pbslearningmedia.org/resource/2f4ccba6-b7f8-4ec6-b0f5-c2f9e95f7f74/activity-make-a-pattern/
-- NRICH Pattern Making: https://nrich.maths.org/4988
-- American Academy of Pediatrics update (Jan 16, 2026): https://publications.aap.org/aapnews/news/32006/Updated-American-Academy-of-Pediatrics-guidance
+- https://www.mathlearningcenter.org/apps/pattern-shapes
+- https://toytheater.com/pattern-blocks/
+- https://www.pbssocal.org/education/pbs-socal-family-math/patterns
+- https://www.k5learning.com/free-preschool-kindergarten-worksheets/patterns/objects
+- https://www.k5learning.com/free-preschool-kindergarten-worksheets/patterns/shapes
+- https://www.k5learning.com/free-preschool-kindergarten-worksheets/colors
+- https://www.education.com/worksheet/article/pattern-practice-complete-pattern-2/
+- https://www.education.com/worksheet/article/patterns-animals-prek/
+- https://www.prekinders.com/pattern-block-safari/
+
